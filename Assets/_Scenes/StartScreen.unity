@@ -147,6 +147,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5613686358142069947, guid: fd7b9847e226ce14a8487272feca4421, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1806391589}
+    - target: {fileID: 5613686358142069947, guid: fd7b9847e226ce14a8487272feca4421, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartGame
+      objectReference: {fileID: 0}
     - target: {fileID: 8225616941648726174, guid: fd7b9847e226ce14a8487272feca4421, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
