@@ -39,7 +39,11 @@ public class Health : MonoBehaviour
         health -= 10;
 
     }
+    public void damageSkel()
+    {
+        health -= 1;
 
+    }
     public void death()
     {
         health -= 1000;

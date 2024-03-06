@@ -9,6 +9,8 @@ TagManager:
   - CinemachineTarget
   - Diamond
   - Heart
+  - bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
