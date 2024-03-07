@@ -16,7 +16,18 @@ namespace XEntity.InventoryItemSystem
             //Attempt to harvest if not harvested already
             AttemptHarvest(interactor);
         }
-       
+
+        public void OnTriggerEnter(Collider other)
+        {
+            // Check if the collider is the player
+            Interactor interactor = other.GetComponent<Interactor>();
+            if (interactor != null)
+            {
+                // Attempt to harvest if not harvested already
+                AttemptHarvest(interactor);
+            }
+        }
+
 
         public void AttemptHarvest(Interactor harvestor) 
         {
