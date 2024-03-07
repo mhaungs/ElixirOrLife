@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] float bulletSpeed = 2f;
     [SerializeField] ParticleSystem hitPrefab;
- 
+    public GameObject enemy;
     float _bulletLifetimeInSeconds = 4f;
     Rigidbody _rgbd;
 
@@ -25,5 +25,13 @@ public class Bullet : MonoBehaviour
     {
         Instantiate(hitPrefab, collision.GetContact(0).point, transform.rotation);
         Destroy(this.gameObject);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 }
