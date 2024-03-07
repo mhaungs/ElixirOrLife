@@ -5,16 +5,22 @@ using UnityEngine;
 public class EnemyDamaged : MonoBehaviour
 {
     public GameObject healthbar;
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "bullet")
+        if (collision.gameObject.tag == "bullet")
         {
             if (gameObject != null)
             {
                 healthbar.GetComponent<enemyhealth>().damage();
             }
         }
-
+        if (collision.gameObject.tag == "Diamond")
+        {
+            if (gameObject != null)
+            {
+                healthbar.GetComponent<enemyhealth>().damage();
+            }
+        }
     }
     public void ded()
     {

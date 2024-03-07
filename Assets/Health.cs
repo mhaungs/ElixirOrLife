@@ -28,10 +28,10 @@ public class Health : MonoBehaviour
             GameOver.SetActive(true);
             Time.timeScale = 0;
         }
-      /*  if (player.transform.position.y <= 60)
+        if (player.transform.position.y <= 60)
         {
             death();
-        }*/
+        }
     }
 
     public void damage()
@@ -39,11 +39,7 @@ public class Health : MonoBehaviour
         health -= 10;
 
     }
-    public void damageSkel()
-    {
-        health -= 1;
 
-    }
     public void death()
     {
         health -= 1000;

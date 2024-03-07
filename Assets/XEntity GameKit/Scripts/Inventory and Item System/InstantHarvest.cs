@@ -7,6 +7,7 @@ namespace XEntity.InventoryItemSystem
     public class InstantHarvest : MonoBehaviour, IInteractable
     {
         private bool isHarvested = false;
+
         //The item that will be harvested on click.
         public Item harvestItem;
 
@@ -16,7 +17,6 @@ namespace XEntity.InventoryItemSystem
             //Attempt to harvest if not harvested already
             AttemptHarvest(interactor);
         }
-       
 
         public void AttemptHarvest(Interactor harvestor) 
         {
