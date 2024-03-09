@@ -138,11 +138,11 @@ public class ThirdPersonController : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        //else
-        //{
-            //Debug.Log("Oh no!  I'm being deleted!!");
-            //Destroy(gameObject);
-        //}
+        else
+        {
+            Debug.Log("Oh no!  I'm being deleted!!");
+            Destroy(gameObject);
+        }
     }
 
 

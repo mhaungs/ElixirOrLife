@@ -21,9 +21,14 @@ public class GameManagerScript : MonoBehaviour
     public void restart()
     {
 
-        playerController.ResetPlayer();
+        //playerController.ResetPlayer();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //print("Check");
+
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        print("Check");
+        Destroy(playerController.gameObject);
+
     }
 
 }
