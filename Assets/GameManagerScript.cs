@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,13 +7,13 @@ public class GameManagerScript : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void restart()
@@ -27,6 +25,10 @@ public class GameManagerScript : MonoBehaviour
 
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        // Destroy all the DontDestroyOnLoad game objects
+        Destroy(XEntity.InventoryItemSystem.ItemManager.Instance.gameObject);
+        Destroy(GameManager.instance.gameObject);
         Destroy(playerController.gameObject);
 
     }
