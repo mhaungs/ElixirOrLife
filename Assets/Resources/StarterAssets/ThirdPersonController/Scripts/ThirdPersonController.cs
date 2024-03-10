@@ -103,10 +103,6 @@ public class ThirdPersonController : MonoBehaviour
     private int _animIDFreeFall;
     private int _animIDMotionSpeed;
 
-    // reset for restart
-    private Vector3 initialPosition;
-    private Quaternion initialRotation;
-
 #if ENABLE_INPUT_SYSTEM 
     private PlayerInput _playerInput;
 #endif
@@ -156,20 +152,14 @@ public class ThirdPersonController : MonoBehaviour
         }
     }
 
-    void Awake()
+    private void Awake()
     {
-        Debug.Log("Awake: " + gameObject.name);
         MakeSingleton();
-
-        initialPosition = transform.position;
-        initialRotation = transform.rotation;
-
         // get a reference to our main camera
         if (_mainCamera == null)
         {
             _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         }
-
     }
 
     private void Start()
@@ -192,7 +182,6 @@ public class ThirdPersonController : MonoBehaviour
         _fallTimeoutDelta = FallTimeout;
     }
 
-
     private void Update()
     {
         _hasAnimator = TryGetComponent(out _animator);
@@ -205,15 +194,6 @@ public class ThirdPersonController : MonoBehaviour
     private void LateUpdate()
     {
         CameraRotation();
-    }
-
-    public void ResetPlayer()
-    {
-        // Reset position and rotation
-        transform.position = initialPosition;
-        transform.rotation = initialRotation;
-
-        // Add any additional reset logic here...
     }
 
     private void AssignAnimationIDs()
