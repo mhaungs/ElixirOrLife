@@ -6,15 +6,18 @@ using UnityEngine.AI;
 // Initial State: Patrolling
 // Patrolling -> Chasing -> Lost -> Patrolling
 
-enum PatrollerStates
-{
-    Patrolling,
-    Lost,
-    Chasing
-}
 
-public class Patroller : MonoBehaviour
+
+public class DragonPatroller : MonoBehaviour
 {
+
+    enum PatrollerStates
+    {
+        Patrolling,
+        Lost,
+        Chasing
+    }
+
     public Transform[] patrolTargets;
     public Transform target;
     public Transform eye;
@@ -24,9 +27,12 @@ public class Patroller : MonoBehaviour
     IEnumerator _coroutine;
     PatrollerStates _currentState = PatrollerStates.Patrolling;
 
+    private Animator animator;
+
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -54,7 +60,10 @@ public class Patroller : MonoBehaviour
                 StartCoroutine(_coroutine);
                 _currentState = PatrollerStates.Patrolling;
                 break;
+
             case PatrollerStates.Chasing:
+
+                animator.SetBool("ChasePlayer", true);
                 if( CanSeeTarget() )
                 {
                     _agent.SetDestination(target.transform.position);
@@ -84,6 +93,8 @@ public class Patroller : MonoBehaviour
 
     bool CanSeeTarget()
     {
+
+
         bool canSee = false;
         Ray ray = new Ray(eye.position, target.transform.position - eye.position);
         RaycastHit hit;

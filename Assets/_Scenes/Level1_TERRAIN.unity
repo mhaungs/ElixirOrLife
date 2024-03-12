@@ -10597,15 +10597,15 @@ PrefabInstance:
       objectReference: {fileID: 8997348372381492698, guid: 4598ce10893d94c04ac9fb125d0f2d69, type: 3}
     - target: {fileID: 5917282990118973270, guid: 28abd591f824a4b12b0616488e4c6119, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 88.8
+      value: 74.13
       objectReference: {fileID: 0}
     - target: {fileID: 5917282990118973270, guid: 28abd591f824a4b12b0616488e4c6119, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.9
+      value: 21.78
       objectReference: {fileID: 0}
     - target: {fileID: 5917282990118973270, guid: 28abd591f824a4b12b0616488e4c6119, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -73.43176
+      value: -68.5
       objectReference: {fileID: 0}
     - target: {fileID: 5917282990118973270, guid: 28abd591f824a4b12b0616488e4c6119, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10650,6 +10650,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7887207104769741294, guid: 28abd591f824a4b12b0616488e4c6119, type: 3}
       insertIndex: -1
       addedObject: {fileID: 933771565}
+    - targetCorrespondingSourceObject: {fileID: 7887207104769741294, guid: 28abd591f824a4b12b0616488e4c6119, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 933771571}
   m_SourcePrefab: {fileID: 100100000, guid: 28abd591f824a4b12b0616488e4c6119, type: 3}
 --- !u!1 &933771563 stripped
 GameObject:
@@ -10668,15 +10671,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933771563}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d4c9dee41599904f89a8d7fa06e0589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolTargets:
-  - {fileID: 1027404240}
-  - {fileID: 1310563851}
-  - {fileID: 270677463}
+  patrolTargets: []
+  target: {fileID: 1309847782}
+  eye: {fileID: 933771564}
+--- !u!114 &933771571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933771563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb24eae61f9bf4e8f93743a5cc7bf501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolTargets: []
   target: {fileID: 1309847782}
   eye: {fileID: 933771564}
 --- !u!1001 &937332184
