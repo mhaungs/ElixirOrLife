@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -29,10 +28,10 @@ public class Health : MonoBehaviour
             GameOver.SetActive(true);
             Time.timeScale = 0;
         }
-      /*  if (player.transform.position.y <= 60)
+        if (player.transform.position.y <= 60)
         {
             death();
-        }*/
+        }
     }
 
     public void damage()
@@ -40,20 +39,11 @@ public class Health : MonoBehaviour
         health -= 10;
 
     }
-    public void damageSkel()
-    {
-        health -= 1;
 
-    }
     public void death()
     {
         health -= 1000;
 
-    }
-
-    public void restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 

@@ -11,18 +11,11 @@ namespace XEntity.InventoryItemSystem
         //The item that will be harvested on click.
         public Item harvestItem;
 
-        //public void OnTriggerEnter(Interactor interactor)
-        //{
-        //AttemptHarvest(interactor);
-        //}
-
         public void OnTriggerEnter(Collider other)
         {
-            // Check if the collider's GameObject has an Interactor component
             Interactor interactor = other.gameObject.GetComponent<Interactor>();
-            if (interactor != null)
+            if(interactor != null)
             {
-                // Attempt to harvest if not harvested already
                 AttemptHarvest(interactor);
             }
         }
