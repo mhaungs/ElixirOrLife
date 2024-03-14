@@ -27,6 +27,10 @@ public class GameManagerScript : MonoBehaviour
 
         Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        //Destroy all the DontDestroyOnLoad game objects
+        Destroy(XEntity.InventoryItemSystem.ItemManager.Instance.gameObject);
+        Destroy(GameManager.instance.gameObject);
         Destroy(playerController.gameObject);
 
     }
