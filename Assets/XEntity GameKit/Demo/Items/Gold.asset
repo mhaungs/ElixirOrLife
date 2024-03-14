@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   itemName: Gold
-  itemPerSlot: 10
+  itemPerSlot: 20
   icon: {fileID: 21300000, guid: 1142736149c0cca40b5f29f3a112c468, type: 3}
   prefab: {fileID: 225667764801509032, guid: 9d1e2cdca7c11a543bd3f8af1866de36, type: 3}
   itemInformation: Money money money
