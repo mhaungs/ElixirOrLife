@@ -8,6 +8,8 @@ namespace XEntity.InventoryItemSystem
     {
         private bool isHarvested = false;
 
+        //public AudioSource collectSound;
+
         //The item that will be harvested on click.
         public Item harvestItem;
 
@@ -17,6 +19,7 @@ namespace XEntity.InventoryItemSystem
             if(interactor != null)
             {
                 AttemptHarvest(interactor);
+                //collectSound.Play();
             }
         }
 

@@ -11,6 +11,8 @@ namespace XEntity.InventoryItemSystem
     {
         public InteractionSettings interactionSettings;
 
+        //public ThirdPersonController playerControls;
+
         //Singleton instance of this script.
         public static ItemManager Instance { get; private set; }
 
@@ -59,8 +61,12 @@ namespace XEntity.InventoryItemSystem
 
         private void ConsumeItem(ItemSlot slot) 
         {
-            Debug.Log("You have consumed " + slot.slotItem.itemName);
+            Debug.Log("You have used " + slot.slotItem.itemName);
             slot.Remove(1);
+            //playerScript = playerGameObject.GetComponent<ThirdPersonController>();
+            //playerScript.MoveSpeed += .25f;
+            //playerScript.SprintSpeed += .25f;
+
         }
 
         private void EquipItem(ItemSlot slot) 
