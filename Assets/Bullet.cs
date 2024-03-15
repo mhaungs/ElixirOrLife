@@ -23,6 +23,19 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Dragon"))
+        {
+            // Handle collision with dragon
+            // Example: decrease dragon's health
+            print("Bullet hit the dragon!");
+            dragonHealth dragonHealth = collision.gameObject.GetComponent<dragonHealth>();
+            if (dragonHealth != null)
+            {
+                int damageAmount = 10;
+                dragonHealth.TakeDamage(damageAmount);
+            }
+        }
+
         Instantiate(hitPrefab, collision.GetContact(0).point, transform.rotation);
         Destroy(this.gameObject);
     }
