@@ -10,8 +10,10 @@ namespace XEntity.InventoryItemSystem
     public class ItemManager : MonoBehaviour
     {
         public InteractionSettings interactionSettings;
-
+        
         //public ThirdPersonController playerControls;
+        
+        public GameObject counterSpeed;
 
         //Singleton instance of this script.
         public static ItemManager Instance { get; private set; }
@@ -63,6 +65,9 @@ namespace XEntity.InventoryItemSystem
         {
             Debug.Log("You have used " + slot.slotItem.itemName);
             slot.Remove(1);
+
+          
+            Instantiate(counterSpeed);
             //playerScript = playerGameObject.GetComponent<ThirdPersonController>();
             //playerScript.MoveSpeed += .25f;
             //playerScript.SprintSpeed += .25f;

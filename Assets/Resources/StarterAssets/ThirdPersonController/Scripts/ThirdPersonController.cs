@@ -17,10 +17,10 @@ public class ThirdPersonController : MonoBehaviour
 {
     [Header("Player")]
     [Tooltip("Move speed of the character in m/s")]
-    public float MoveSpeed = 2.0f;
+    private float MoveSpeed = 2.0f + SpeedIncrease.upgradespeed;
 
     [Tooltip("Sprint speed of the character in m/s")]
-    public float SprintSpeed = 5.335f;
+    private float SprintSpeed = 5.335f + SpeedIncrease.upgradespeed;
 
     [Tooltip("How fast the character turns to face movement direction")]
     [Range(0.0f, 0.3f)]
@@ -185,7 +185,8 @@ public class ThirdPersonController : MonoBehaviour
     private void Update()
     {
         _hasAnimator = TryGetComponent(out _animator);
-
+        MoveSpeed = 2.0f + SpeedIncrease.upgradespeed;
+        SprintSpeed = 5.335f + SpeedIncrease.upgradespeed;
         JumpAndGravity();
         GroundedCheck();
         Move();

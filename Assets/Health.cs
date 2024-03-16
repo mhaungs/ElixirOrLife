@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public int health;
     public GameObject player;
     public GameObject GameOver;
+  
     void Start()
     {
         Time.timeScale = 1;

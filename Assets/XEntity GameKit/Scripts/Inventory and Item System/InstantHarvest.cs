@@ -4,9 +4,12 @@ namespace XEntity.InventoryItemSystem
 {
     //This script is attached to any item that is picked up by the interactor on a single click such as small rocks and sticks.
     //NOTE: The item is only added if the interactor is within the interaction range.
+ 
     public class InstantHarvest : MonoBehaviour, IInteractable
     {
+       
         private bool isHarvested = false;
+       
 
         //public AudioSource collectSound;
 
@@ -15,9 +18,11 @@ namespace XEntity.InventoryItemSystem
 
         public void OnTriggerEnter(Collider other)
         {
+            
             Interactor interactor = other.gameObject.GetComponent<Interactor>();
             if(interactor != null)
             {
+                
                 AttemptHarvest(interactor);
                 //collectSound.Play();
             }
@@ -28,6 +33,7 @@ namespace XEntity.InventoryItemSystem
         {
             //Attempt to harvest if not harvested already
             AttemptHarvest(interactor);
+            
         }
 
         public void AttemptHarvest(Interactor harvestor) 
@@ -40,5 +46,7 @@ namespace XEntity.InventoryItemSystem
                 }
             }
         }
+ 
+    
     }
 }
