@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
     {
 
         playerSlider3D.value = health;
-
+        health += Health_increase.upgradehealth;
         if (health <= 1)
         {
             GameOver.SetActive(true);
