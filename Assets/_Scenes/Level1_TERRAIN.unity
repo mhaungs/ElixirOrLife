@@ -23028,6 +23028,14 @@ PrefabInstance:
       value: Item Manager
       objectReference: {fileID: 0}
     - target: {fileID: 4490459622650576402, guid: 7ec268d119c305d4792a8606d7aad080, type: 3}
+      propertyPath: upSpeed
+      value: 
+      objectReference: {fileID: 4716045561441509078, guid: 5a5780d0f78c8dd44b67da846753cef1, type: 3}
+    - target: {fileID: 4490459622650576402, guid: 7ec268d119c305d4792a8606d7aad080, type: 3}
+      propertyPath: upHealth
+      value: 
+      objectReference: {fileID: 4716045561441509078, guid: d42501d0c8d1e0341b4dc61f6f9e72df, type: 3}
+    - target: {fileID: 4490459622650576402, guid: 7ec268d119c305d4792a8606d7aad080, type: 3}
       propertyPath: counterSpeed
       value: 
       objectReference: {fileID: 4716045561441509078, guid: 5a5780d0f78c8dd44b67da846753cef1, type: 3}
