@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Health_increase : MonoBehaviour
 {
-    public static int upgradehealth = 0;
+    //public static int upgradehealth = 0;
+    public GameObject healthbar;
+
     void Awake()
     {
-        upgradehealth += 10;
+        healthbar.GetComponent<Health_lvl1>().increasehealth();
     }
+
+   
 }

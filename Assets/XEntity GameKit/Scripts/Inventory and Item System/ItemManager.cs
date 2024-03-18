@@ -74,7 +74,12 @@ namespace XEntity.InventoryItemSystem
 
         private void EquipItem(ItemSlot slot) 
         {
-            Debug.Log("Equipping " + slot.slotItem.itemName);
+            Debug.Log("You have used " + slot.slotItem.itemName);
+
+            Instantiate(upHealth);
+            slot.Remove(1);
+            Invoke("DeleteObject", 2f);
+            //DestroyImmediate(upHealth, true);
         }
 
         private void PlaceItem(ItemSlot slot) 

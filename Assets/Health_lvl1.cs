@@ -28,12 +28,19 @@ public class Health_lvl1 : MonoBehaviour
             GameOver.SetActive(true);
             Time.timeScale = 0;
         }
+
+        //health += Health_increase.upgradehealth;
     }
 
     public void damage()
     {
         health -= 10;
 
+    }
+
+    public void increasehealth()
+    {
+        health += 50;
     }
 
 }

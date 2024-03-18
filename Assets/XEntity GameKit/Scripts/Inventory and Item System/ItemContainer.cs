@@ -129,7 +129,7 @@ namespace XEntity.InventoryItemSystem
                 switch (option)
                 {
                     case SlotOptions.Use:
-                        buttonTitle = "Use";
+                        buttonTitle = "Use Item";
                         onButtonClicked = OnUseItemClicked;
                         break;
                     case SlotOptions.ItemInfo:
@@ -137,7 +137,7 @@ namespace XEntity.InventoryItemSystem
                         onButtonClicked = OnItemInfoClicked;
                         break;
                     case SlotOptions.Remove:
-                        buttonTitle = "Remove";
+                        buttonTitle = "Increase Health";
                         onButtonClicked = OnRemoveItemClicked;
                         break;
                     case SlotOptions.BulkRemove:
@@ -198,8 +198,9 @@ namespace XEntity.InventoryItemSystem
 
         private void OnRemoveItemClicked(ItemSlot slot, Interactor interactor)
         {
-            if (dropItemGameObjects) slot.RemoveAndDrop(1, containerInteractor.ItemDropPosition);
-            else slot.Remove(1);
+            //if (dropItemGameObjects) slot.RemoveAndDrop(1, containerInteractor.ItemDropPosition);
+            //else slot.Remove(1);
+            ItemManager.Instance.UseItem(slot);
         }
 
         private void OnBulkRemoveItemClicked(ItemSlot slot, Interactor interactor)
