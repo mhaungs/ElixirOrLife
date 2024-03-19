@@ -11,6 +11,13 @@ TagManager:
   - Heart
   - bullet
   - Enemy
+  - Stop
+  - MovingPlat
+  - enemybullet
+  - Flame
+  - BossGem
+  - Boss
+  - Dragon
   layers:
   - Default
   - TransparentFX

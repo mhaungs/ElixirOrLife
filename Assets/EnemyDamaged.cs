@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class EnemyDamaged : MonoBehaviour
 {
+    public static bool endgame;
     public GameObject healthbar;
+
+    public void Start()
+    {
+        endgame = false;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "bullet")
@@ -24,7 +30,16 @@ public class EnemyDamaged : MonoBehaviour
     }
     public void ded()
     {
-        Destroy(gameObject);
+        if(gameObject.tag == "Boss")
+        {
+
+            endgame = true;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+     
     }
 }
 

@@ -30,9 +30,18 @@ public class Bullet : MonoBehaviour
             print("Bullet hit the dragon!");
             dragonHealth dragonHealth = collision.gameObject.GetComponent<dragonHealth>();
             if (dragonHealth != null)
-            {
-                int damageAmount = 10;
-                dragonHealth.TakeDamage(damageAmount);
+            {   
+                if (Lvl1_dmg.imortal == true)
+                {
+                    int damageAmount = 100;
+                    dragonHealth.TakeDamage(damageAmount);
+                }
+                else
+                {
+                    int damageAmount = 10;
+                    dragonHealth.TakeDamage(damageAmount);
+                }
+               
             }
         }
 

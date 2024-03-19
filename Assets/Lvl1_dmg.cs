@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Lvl1_dmg : MonoBehaviour
 {
+    
     public GameObject healthbar;
     float timer = 0.0f;
+    public static bool imortal;
+    public GameObject shield;
+    public void Start()
+    {
+        imortal = false;
+        shield.SetActive(false);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
@@ -14,7 +22,10 @@ public class Lvl1_dmg : MonoBehaviour
             {
                 if (gameObject != null)
                 {
-                    healthbar.GetComponent<Health_lvl1>().damage();
+                    if (imortal == false)
+                    {
+                        healthbar.GetComponent<Health_lvl1>().damage();
+                    }
                 }
             }
         }
@@ -28,6 +39,11 @@ public class Lvl1_dmg : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            imortal = !imortal;
+        }
+        shield.SetActive(imortal);
         timer += Time.deltaTime;
     }
     private void OnTriggerStay(Collider other)
@@ -41,8 +57,10 @@ public class Lvl1_dmg : MonoBehaviour
                 {
                     if (timer > 1f)
                     {
-                        dmg();
-                   
+                        if (imortal == false)
+                        {
+                            dmg();
+                        }
                     }
                 }
             }

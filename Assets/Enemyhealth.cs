@@ -31,7 +31,18 @@ public class enemyhealth : MonoBehaviour
     {
         if (gameObject != null)
         {
-            health1 -= 10;
+            if (Damaged.imortal == true)
+            {
+                health1 -= 100;
+            }
+            else if (Lvl1_dmg.imortal == true)
+            {
+                health1 -= 100;
+            }
+            else
+            {
+                health1 -= 10;
+            }
         }
     }
 }

@@ -30,7 +30,11 @@ public class RandomVoice : MonoBehaviour
 
         if (!source.isPlaying && startover == true && noRepeat == true)
         {
-            horns.Play();
+            if(Time.timeScale ==1)
+            {
+                horns.Play();
+            }
+         
             tooltip.SetActive(true);
             Invoke("off", 5);
             noRepeat = false;
